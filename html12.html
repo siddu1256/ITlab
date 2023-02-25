@@ -1,0 +1,189 @@
+<html>
+<head>
+<script>
+var a;
+a=Number(prompt("Enter the no of input given"));
+var arr=[];
+var i,k;
+for(i=0;i<a;i++){
+arr[i]=Number(prompt("Enter each element"));
+}
+var k=arr[0];
+for(i=0;i<a;i++){
+if(k<arr[i]){
+k=arr[i];}}
+alert(k);
+
+function add(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c= a + b;
+document.getElementById("answer").value= c;
+}
+function sub(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c= a - b;
+document.getElementById("answer").value= c;
+}
+function mul(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c= a * b;
+document.getElementById("answer").value= c;
+}
+function div(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c= a / b;
+document.getElementById("answer").value= c;
+}
+function quo(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c= a % b;
+document.getElementById("answer").value= c;
+}
+
+
+
+function concat(){
+var a=document.getElementById(1).value;
+var b=document.getElementById(2).value;
+document.getElementById("3").value= a+b;
+}
+function palin(){
+var a=document.getElementById(1).value;
+n=a.length;
+var j=n-1;
+var b=[]
+for(i=0;i<n;i++){
+alert("hii")
+
+b[j--]=a[i];
+
+}
+var count=0;
+alert(b);
+for(i=0;i<n;i++){
+if(b[i]==a[i]){
+count=count+1;
+}
+}
+if(count==n){
+document.getElementById("result1").value= "It is a palindrome";
+
+}
+else{
+document.getElementById("result1").value= "It is not a palindrome";
+
+}
+}
+function prime(){
+var a=document.getElementById(2).value;
+var count=0;
+var i;
+for(i=2;i<a;i++){
+if(a%i==0){
+count=count+1;
+}
+}
+if(count==0){
+document.getElementById("result2").value= "It is a prime number";
+}
+else{
+document.getElementById("result2").value= "It is not a prime number";
+
+}
+}
+function ams(){
+var a=Number(document.getElementById(2).value);
+var k=a;
+var sum=0;
+alert("hii")
+while(a>=1){
+i=a%10;
+sum=sum+(i*i*i)
+a=Math.floor(a/10);
+}
+alert(sum)
+if(sum==k){
+document.getElementById("result3").value= "It is a Amstrong Number";
+}
+else{
+document.getElementById("result3").value= "It is not a Amstrong Number";
+}
+}
+
+
+function fac(){
+var a=Number(document.getElementById("1").value);
+var i;
+var fact=1;
+for(i=1;i<=a;i++)
+{fact=fact*i;}
+document.getElementById("result").value= fact;
+
+}
+function array(){ var arr=[];
+var i;
+var a=Number(prompt("Enter number of elements in array"));
+for(i=0;i<a;i++)
+{ arr[i]=Number(prompt("Enter values"));
+}
+var b=arr.reverse();
+document.getElementById("result2").value= b;
+var d=arr.sort();
+document.getElementById("result4").value=d;
+var c=arr.pop();
+document.getElementById("result3").value=c;
+
+
+}
+
+</script>
+</head>
+<body>
+First Value:<input type="text" id="first"><br>
+Second Value:<input type="text" id="second"><br>
+Result:<input id="answer"><br>
+<button onclick="add()">Add</button>
+<button onclick="sub()">Substraction</button>
+<button onclick="mul()">Multiplication</button>
+<button onclick="div()">Division</button>
+<button onclick="quo()">Remainder</button>
+
+
+<table>
+<tr><td>Field-1:</td><td><input type="text" id="1"></td></tr>
+<tr><td><button onclick="palin()">palindrome</button></td>
+<td><input type="text"  id="result1"></td></tr>
+<tr><td>Field-2:</td><td><input type="text" id="2"></td></tr>
+<tr><td><button onclick="prime()">prime</button></td>
+<td><input type="text"  id="result2"></td></tr>
+<tr><td><button onclick="ams()">Amstrong</button></td>
+<td><input type="text"  id="result3"></td></tr>
+<tr><td>Field-3:</td><td><input type="text" id="3"></td>
+<td><button onclick="concat()">concate</button></td></tr>
+</table>
+
+
+Given Value:<input type="text" id="1"><br>
+<button onclick="fac()">factorial</button>
+<input type="text" id="result"><br><br>
+<button onclick="array()">Properties</button>
+<h4>Reverse of an array</h4>
+
+<input type="text" id="result2">
+<h4>Removing an element in the array</h4>
+<input type="text" id="result3">
+<h4>sorting an elements in the array</h4>
+<input type="text" id="result4">
+
+</body>
+</html>

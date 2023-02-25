@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Dropdown Content Changer</title>
+    <script>
+      function updateDropdowns(sel) {
+        var value = sel.value;
+        var dropdown1 = document.getElementById("dropdown1");
+        var dropdown2 = document.getElementById("dropdown2");
+        dropdown2.innerHTML = "";
+        if (value == "Option 1") {
+          var option = document.createElement("option");
+          option.text = "Option 1.1";
+          dropdown2.add(option);
+          var option = document.createElement("option");
+          option.text = "Option 1.2";
+          dropdown2.add(option);
+        } else if (value == "Option 2") {
+          var option = document.createElement("option");
+          option.text = "Option 2.1";
+          dropdown2.add(option);
+          var option = document.createElement("option");
+          option.text = "Option 2.2";
+          dropdown2.add(option);
+        }
+      }
+    </script>
+    <style>
+      .box {
+        width: 370px;
+        height: 1000px;
+        display: inline-block;
+        margin: 5px;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .red:hover {
+        background-color: yellow;
+      }
+
+      .blue:hover {
+        background-color: purple;
+      }
+
+      .green:hover {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dropdown Content Changer</h1>
+    <select id="dropdown1" onchange="updateDropdowns(this)">
+      <option>Select an option</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+    <br><br>
+    <select id="dropdown2">
+      <option>Select an option</option>
+    </select>
+   <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box green"></div>
+</body>
+</html>
